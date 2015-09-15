@@ -36,7 +36,9 @@
 					<ul class="nav navbar-nav">
 						<li><a href="">Home</a></li>
 						<li><a href="product/12">Product</a></li>
-						<li><a href="cart">Cart</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="cart">Cart <span class="badge">4</span></a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
