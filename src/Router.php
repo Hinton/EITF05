@@ -105,11 +105,11 @@ class Route {
 			{
 				
 				$match = true;
+				$params = [];
 				for ($i = 0; $i < count($route); $i++)
 				{
 
-					$params = [];
-					if (strpos($route[$i], ':') !== -1)
+					if (strpos($route[$i], ':') !== false)
 					{
 						$params[$route[$i]] = $path[$i];
 					}
@@ -119,7 +119,6 @@ class Route {
 					}
 
 				}
-
 
 				if ($match)
 				{
