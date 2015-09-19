@@ -39,7 +39,7 @@ class Cart {
 	{
 		$products = [];
 		if (isset($_SESSION['cart'])) {
-			$products = json_decode($_SESSION['cart']);
+			$products = json_decode($_SESSION['cart'], true);
 		}
 
 		$this->_products = $products;
