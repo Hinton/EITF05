@@ -32,7 +32,9 @@ class Cart {
 
 	public function count()
 	{
-		return count($this->_products);
+		return array_reduce($this->_products, function($carry, $item) {
+			return $carry + $item;
+		});
 	}
 
 	public function load()
