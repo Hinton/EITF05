@@ -17,11 +17,13 @@ class Product extends Controller {
 			$cart = true;
 		}
 
+		$products = new \Shop\Products();
+		$product = $products->getProduct($this->getParam(':id'));
+
 		$this->view = new \Shop\View('product', array(
-			'id'    => $this->getParam(':id'),
-			'name'  => 'Test product',
-			'price' => '200.00',
-			'cart'  => $cart,
+			'id'      => $this->getParam(':id'),
+			'product' => $product,
+			'cart'    => $cart,
 		));
 
 	}

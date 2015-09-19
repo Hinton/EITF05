@@ -5,10 +5,11 @@ namespace Shop;
 class Cart {
 
 	private $_products = [];
+	private $_list;
 
 	public function __construct()
 	{
-
+		$this->_list = new Products();
 	}
 
 	public function addProduct($productId)
@@ -21,7 +22,12 @@ class Cart {
 
 	public function getProducts()
 	{
-		return $this->_products;
+		$products = [];
+		foreach ($this->_products as $id => $amount) {
+			$products[$id] = array_merge($this->_list->getProduct($id), ['amount' => $amount]);
+		}
+
+		return $products;
 	}
 
 	public function count()
@@ -42,6 +48,18 @@ class Cart {
 	public function save()
 	{
 		$_SESSION['cart'] = json_encode($this->_products);
+	}
+
+	public function sum()
+	{
+		$products = $this->getProducts();
+		$sum = 0;
+
+		foreach ($products as $p) {
+			$sum += $p['price'] * $p['amount'];
+		}
+
+		return $sum;
 	}
 
 }

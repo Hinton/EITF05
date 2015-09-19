@@ -4,9 +4,9 @@
 
 <?php endif; ?>
 
-<h2><?php echo $name; ?></h2>
+<h2><?php echo $product['name']; ?></h2>
 
-<p>Price: <?php echo $price; ?> kr</h2>
+<p>Price: <?php echo $product['price']; ?> kr</h2>
 
 <p>ID: <?php echo $id; ?></p>
 

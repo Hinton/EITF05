@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // Include PSR4 example autoloader
 include 'src/autoloader.php';
 
@@ -11,6 +13,8 @@ $router = new \Shop\Router();
 $router->add("/", "\Shop\Controller\Index");
 
 $router->add('/product/:id', "\Shop\Controller\Product");
+
+$router->add("/cart", "\Shop\Controller\Cart");
 
 
 
