@@ -16,6 +16,8 @@ $router->add('/product/:id', "\Shop\Controller\Product");
 
 $router->add("/cart", "\Shop\Controller\Cart");
 
+$router->add("/confirmation", "\Shop\Controller\Confirmation");
+
 
 
 
