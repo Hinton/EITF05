@@ -1,8 +1,4 @@
-<h2>Confirmation</h2>
-
-<h3>Your purchase was succesful</h3>
-<br>
-<p>Delivery address: <?php echo $user['address']; ?></p>
+<h2>Your purchase was succesful! <span class="glyphicon glyphicon-ok" aria-hidden="true"></span></h2> 
 
 <h3>Receipt</h3>
 
@@ -30,10 +26,14 @@
 		<?php endforeach; ?>
 
 		<tr>
-			<th colspan="3">Sum</th>
-			<td><?php echo money_format('%i', $sum); ?></td>
+			<th colspan="3" class="success">Sum</th>
+			<td class="success"><?php echo money_format('%i', $sum); ?></td>
 		</tr>
 
 	</tbody>
 
 </table>
+
+<br>
+
+<p>Delivery address: <?php echo $user['address']; ?></p>

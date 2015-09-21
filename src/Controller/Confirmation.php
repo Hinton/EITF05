@@ -4,6 +4,7 @@ namespace Shop\Controller;
 
 class Confirmation extends Controller {
 
+	protected $name = 'Receipt';
 
 	public function index()
 	{

@@ -4,6 +4,7 @@ namespace Shop\Controller;
 
 class Product extends Controller {
 
+	protected $name = 'Product';
 	
 	public function index()
 	{

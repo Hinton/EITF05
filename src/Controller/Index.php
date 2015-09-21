@@ -4,7 +4,8 @@ namespace Shop\Controller;
 
 class Index extends Controller {
 
-	
+	protected $name = 'Home';
+
 	public function index()
 	{
 

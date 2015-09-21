@@ -4,6 +4,7 @@ namespace Shop\Controller;
 
 class Cart extends Controller {
 
+	protected $name = 'Cart';
 
 	public function index()
 	{
