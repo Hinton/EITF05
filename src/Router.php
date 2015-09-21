@@ -72,7 +72,7 @@ class Route {
 	{
 		$this->route = $route;
 
-		$tmp = split('@', $action);
+		$tmp = explode('@', $action);
 
 		$this->controller = $tmp[0];
 
@@ -98,8 +98,8 @@ class Route {
 		// Should be split up, filling the params should be done later!
 		if ($this->isDynamic)
 		{
-			$route = split('/', $this->route);
-			$path = split('/', $path);
+			$route = explode('/', $this->route);
+			$path = explode('/', $path);
 
 			if (count($route) == count($path))
 			{

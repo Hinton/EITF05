@@ -64,4 +64,9 @@ class Cart {
 		return $sum;
 	}
 
+	public function emptyCart()
+	{
+		$this->_products = [];
+	}
+
 }

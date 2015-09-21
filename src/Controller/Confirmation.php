@@ -12,8 +12,11 @@ class Confirmation extends Controller {
 
 		$this->view = new \Shop\View('confirmation');
 		$this->view->set('sum', $this->cart->sum());
+		$this->view->set('products', $this->cart->getProducts());
+
+		$this->cart->emptyCart();
+		$this->cart->save();
 
 	}
-
 
 }
