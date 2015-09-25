@@ -7,7 +7,7 @@
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<title><?php echo $name; ?> - Shop</title>
 
-	<base href="/EITF05/">
+	<base href="/">
 
 	<!-- Bootstrap -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -38,7 +38,14 @@
 						<li><a href="product/12">Product</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="cart">Cart <span class="badge"><?php echo $numProductsInCart; ?></span></a></li>
+						<?php if (!isset($_SESSION['user'])): ?>
+							<li><a href="signup">Sign up</a></li>
+							<li><a href="login">Log in</a></li>
+						<?php else: ?>
+							<li class="disabled"><a href=""><?php echo $_SESSION['user'][0]?></a></li>
+							<li><a href="cart">Cart <span class="badge"><?php echo $numProductsInCart; ?></span></a></li>
+							<li><a href="logout">Log out</a></li>
+						<?php endif; ?>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>

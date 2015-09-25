@@ -11,8 +11,6 @@ class Index extends Controller {
 
 		$this->view = new \Shop\View("index");
 
-		$this->view->set('name', 'Foo');
-
 	}
 
 

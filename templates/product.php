@@ -10,6 +10,9 @@
 
 <p>ID: <?php echo $id; ?></p>
 
-<form method="post">
-	<input type="submit" class="btn btn-primary" value="Add to cart">
-</form>
+<?php if (!isset($_SESSION['user'])): ?>
+<?php else: ?>
+	<form method="post">
+		<input type="submit" class="btn btn-primary" value="Add to cart">
+	</form>
+<?php endif; ?>

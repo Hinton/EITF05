@@ -18,8 +18,11 @@ $router->add("/cart", "\Shop\Controller\Cart");
 
 $router->add("/confirmation", "\Shop\Controller\Confirmation");
 
+$router->add("/signup", "\Shop\Controller\Signup");
 
+$router->add("/login", "\Shop\Controller\Login");
 
+$router->add("/logout", "\Shop\Controller\Logout");
 
 // Find a matching route, and execute it.
 $router->execute();
