@@ -32,4 +32,4 @@
 
 </table>
 
-<a class="btn btn-primary" href="">Checkout</a>
+<a class="btn btn-primary" href="confirmation">Checkout</a>
