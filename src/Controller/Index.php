@@ -11,7 +11,10 @@ class Index extends Controller {
 
 		$this->view = new \Shop\View("index");
 
-	}
+		if (isset($_SESSION['user'])) {
+			$this->view->set('username', $_SESSION['user'][0]);
+		}
 
+	}
 
 }
