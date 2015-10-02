@@ -15,7 +15,7 @@ class Login {
       return false;
     }
     if(password_verify($password, $user->hashedPassword)){
-      $_SESSION['user'] = [$username];
+      $_SESSION['user'] = [$username, $user->address];
       return $user;
     } else {
       return false;

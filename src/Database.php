@@ -30,6 +30,15 @@ class Database {
 	}
 
 	public function fetchUser($username){
+	//	$mysqli = mysqli_connect("127.0.0.1", "root", "@mumintroll!", "webshop");
+
+	//	$result = $mysqli->multi_query("SELECT * FROM users WHERE username = '$username' LIMIT 1");
+
+    //var_dump($result);
+
+    /* free result set */
+   // $result->close();
+
 		$query = "SELECT * FROM users WHERE username=?";
 		$statement = $this->db->prepare($query);
 		if (!$statement->execute(array($username))){
@@ -39,6 +48,7 @@ class Database {
 		$user = new \Shop\User();
 		$user->username = $response['username'];
 		$user->hashedPassword = $response['password'];
+		$user->address = $response['address'];
 		return $user;
 	}
 

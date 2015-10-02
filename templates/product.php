@@ -13,6 +13,7 @@
 <?php if (!isset($_SESSION['user'])): ?>
 <?php else: ?>
 	<form method="post">
+		<input type="hidden" name="csrf" value="<?php echo $csrf ?>">
 		<input type="submit" class="btn btn-primary" value="Add to cart">
 	</form>
 <?php endif; ?>

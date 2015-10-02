@@ -42,8 +42,8 @@
 							<li><a href="signup">Sign up</a></li>
 							<li><a href="login">Log in</a></li>
 						<?php else: ?>
-							<li class="disabled"><a href=""><?php echo $_SESSION['user'][0]?></a></li>
-							<li><a href="cart">Cart <span class="badge"><?php echo $numProductsInCart; ?></span></a></li>
+							<li class="disabled"><a href=""><span class="glyphicon glyphicon-user"></span>  <?php echo $_SESSION['user'][0]?></a></li>
+							<li><a href="cart">Cart<span class="badge"><?php echo $numProductsInCart; ?></span></a></li>
 							<li><a href="logout">Log out</a></li>
 						<?php endif; ?>
 					</ul>

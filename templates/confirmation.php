@@ -1,4 +1,4 @@
-<h2>Your purchase was succesful! <span class="glyphicon glyphicon-ok" aria-hidden="true"></span></h2> 
+<h2>Your purchase was succesful! <span class="glyphicon glyphicon-ok" aria-hidden="true"></span></h2>
 
 <h3>Receipt</h3>
 
@@ -36,4 +36,4 @@
 
 <br>
 
-<p>Delivery address: <?php echo $user['address']; ?></p>
+<p>Delivery address: <?php echo $_SESSION['user'][1]; ?></p>

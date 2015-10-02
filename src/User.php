@@ -6,6 +6,7 @@ class User {
 
     public $username;
     public $hashedPassword;
+    public $address;
 
     public static function getUser($username) {
         $db = new \Shop\Database();

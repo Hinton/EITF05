@@ -14,24 +14,36 @@ class Signup {
 
   public function signup($username, $address, $password, $repassword){
     $db = new \Shop\Database();
-    //Göra en funktion som tar bort taggar
+
+    if (!$this->checkUsername($username)){
+      return false;
+    }
     if(!$db->usernameAvailable($username)){
       $this->errorMessage = "Username not available!";
       return false;
     }
-
     $passwordOK = $this->checkPasswordSecurity($password, $repassword);
-
+    
     if($passwordOK){
         $hash = password_hash($password, PASSWORD_DEFAULT);
-        $_SESSION['user'] = [$username];
-        $db->addUser($username, $address, $hash);
+        $_SESSION['user'] = [$username, $address];
+        $db->addUser($username, $this->untagAddress($address), $hash);
         return true;
     }
 
     return false;
   }
 
+  private function checkUsername($username){
+    if(!ctype_alnum($username)){
+      $this->errorMessage = "Your username is not alphanumeric!";
+      return false;
+    }
+    return true;
+  }
+  private function untagAddress($address){
+    return htmlspecialchars($address);
+  }
 
   private function checkPasswordSecurity($password, $repassword){
     if(empty($password)){
